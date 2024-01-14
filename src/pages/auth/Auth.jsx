@@ -2,11 +2,14 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { authUser } from '../redux/reducers/authSlice';
+import { useNavigate } from 'react-router-dom';
 
 
 const Auth = () => {
   const [status, setStatus] = useState('login');
   const dispatch = useDispatch()
+
+  const navigate = useNavigate()
 	
   const {
     register,
@@ -90,6 +93,7 @@ const Auth = () => {
 
           <button type='submit'>{status === 'register' ? 'Register' : 'Login'}</button>
         </form>
+        <button onClick={() => navigate('/')}>Go Back</button>
       </div>
     </div>
   );

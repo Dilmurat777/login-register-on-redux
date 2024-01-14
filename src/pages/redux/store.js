@@ -1,16 +1,23 @@
 import { configureStore } from '@reduxjs/toolkit'
 import authSlice from './reducers/authSlice'
 import { rememberReducer, rememberEnhancer } from 'redux-remember';
+import productsSlice from './reducers/productsSlice';
+import basketSlice from './reducers/basketSlice';
 
-const rememberedKeys = [ 'auth' ];
+const rememberedKeys = [ 'auth', 'products', 'basket' ];
 
 const store = configureStore({
+
   reducer: rememberReducer({ 
-    auth: authSlice
+
+    auth: authSlice,
+    products: productsSlice,
+    basket: basketSlice
+
   }),
   enhancers: (getDefaultEnhancers) => getDefaultEnhancers().concat(
     rememberEnhancer(
-      window.localStorage, // or window.sessionStorage, or AsyncStorage, or your own custom storage driver
+      window.localStorage,
       rememberedKeys
     )
   )

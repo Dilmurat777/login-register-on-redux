@@ -1,5 +1,11 @@
 {
   "users": [
-
+    {
+      "email": "mrdilmurat777@gmail.com",
+      "password": "$2a$10$va3oxvqg3TouOAfT.54OIOtrBbzatqgY4w8d0zfN3eWc1Co7EYhdO",
+      "name": "Dilmurat",
+      "phone": "+996(555)55-55-55",
+      "id": 1
+    }
   ]
 }
